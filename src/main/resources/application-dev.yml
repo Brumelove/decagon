@@ -1,0 +1,32 @@
+server:
+  port: 8089
+  servlet:
+    context-path: /decagon-api
+
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO
+      hibernate: INFO
+
+spring:
+  application:
+    name: Decagon
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dataspec?useUnicode=true&characterEncoding=UTF8&useSSL=false
+    username: dataspec
+    password: dataspec
+    # driverClassName: org.postgresql.Driver
+
+
+  jpa:
+    hibernate.ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate.format_sql: false
+      hibernate.jdbc.lob.non_contextual_creation: true
+    hibernate.naming:
+      implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
